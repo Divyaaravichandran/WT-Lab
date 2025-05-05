@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiters | Employment Portal</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a><img src="img/logo.png" alt="JobFinder Logo">JobFinder</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="opportunuties.html">Opportunities</a></li>
+                <li><a href="recruiters.html" class="active">Recruiters</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-recruiters">
+        <h1>Welcome, Recruiters</h1>
+        <p>Find the best candidates for your company with ease.</p>
+        <a href="#post-job" class="btn">Post a Job</a>
+    </section>
+
+    <section id="post-job" class="post-job">
+        <h2>Post a Job</h2>
+        <form id="job-form">
+            <label for="job-title">Job Title:</label>
+            <input type="text" id="job-title" placeholder="Enter job title" required>
+
+            <label for="company-name">Company Name:</label>
+            <input type="text" id="company-name" placeholder="Enter company name" required>
+
+            <label for="job-location">Location:</label>
+            <input type="text" id="job-location" placeholder="Enter job location" required>
+
+            <button type="submit" id="submit-btn">Submit Job</button>
+        </form>
+    </section>
+
+    <section id="job-listings">
+        <h2>Job Listings</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Edit/Delete</th>
+                </tr>
+            </thead>
+            <tbody id="job-table-body">
+                <!-- Jobs will be added here -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Employment Portal | Contact: info@jobfinder.com</p>
+    </footer>   
+        <script src="script.js"></script>
+</body>
+</html>
