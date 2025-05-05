@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rice Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/h8.png" alt="Rice Basket Logo"> Rice Basket
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cont.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><br><br>
+    <section>
+    <form class="d-flex mx-auto search-bar" onsubmit="return false;">
+        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search for rice..." aria-label="Search" onkeyup="searchProducts()">
+        <button class="btn btn-light" type="button" onclick="searchProducts()">Search</button>
+    </form>
+</section>
+
+    <section id="shop" class="container mt-5">
+        <h2 class="our-products text-center">Our Products</h2><br><br>
+        <div class="row g-4"> 
+            <!-- Product 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card">
+                    <img src="img/basmathi.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Premium Basmati Rice - 1kg</h5>
+                        <p>Price: ₹299</p>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#productModal1">Quick View</button>
+                            <button class="btn btn-success" onclick="addToCart('Premium Basmati Rice', 299)">Add to Cart</button>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card">
+                    <img src="img/brown rice.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Organic Brown Rice - 1kg</h5>
+                        <p>Price: ₹249</p>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#productModal2">Quick View</button>
+                            <button class="btn btn-success" onclick="addToCart('Organic brown Rice', 249)">Add to Cart</button>
+
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Product 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card">
+                    <img src="img/black rice.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Black Rice - 1kg</h5>
+                        <p>Price: ₹349</p>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#productModal3">Quick View</button>
+                            <button class="btn btn-success" onclick="addToCart('Black Rice', 349)">Add to Cart</button>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Product 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card">
+                    <img src="img/red rice.webp" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Red Rice - 1kg</h5>
+                        <p>Price: ₹199</p>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#productModal4">Quick View</button>
+                            <button class="btn btn-success" onclick="addToCart('Red Rice', 199)">Add to Cart</button>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card">
+                    <img src="img/sona.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sona Masoori Rice - 1kg</h5>
+                        <p>Price: ₹99</p>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#productModal5">Quick View</button>
+                            <button class="btn btn-success" onclick="addToCart('Sona Masoori Rice', 99)">Add to Cart</button>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card">
+                    <img src="img/ponni.webp" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ponni Rice - 1kg</h5>
+                        <p>Price: ₹189</p>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#productModal6">Quick View</button>
+                            <button class="btn btn-success" onclick="addToCart('Ponni Rice', 189)">Add to Cart</button>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>    
+
+    <!-- Modal for Product 1 -->
+<div class="modal fade" id="productModal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Premium Basmati Rice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img\basmathi.jpg" class="img-fluid">
+                <p>Long grain, high-quality rice with a rich aroma.</p>
+                <div class="rating-container">
+                <h6>Rate this product:</h6>
+        <div class="stars" id="ratingStars1" data-product="Premium Basmati Rice">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+        </div>
+        <span id="ratingValue1">0</span> / 5
+    </div>
+
+        <div class="review-section">
+        <h6>Leave a Review:</h6>
+        <textarea id="reviewText1" class="form-control mb-2" rows="2" placeholder="Write a review..."></textarea>
+        <button class="btn btn-primary btn-sm" onclick="submitReview(1, 'Premium Basmati Rice')">Submit</button>
+    
+        <h6 class="mt-3">Customer Reviews:</h6>
+        <div id="reviewsContainer1" class="reviews-container"></div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Product 2 -->
+<div class="modal fade" id="productModal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Organic Brown Rice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img/brown rice.jpg" class="img-fluid">
+                <p>Rich in fiber and essential nutrients.</p>
+                <div class="rating-container">
+                    <h6>Rate this product:</h6>
+            <div class="stars" id="ratingStars2" data-product="Organic Brown Rice">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+            <span id="ratingValue2">0</span> / 5
+        </div>
+    
+            <div class="review-section">
+            <h6>Leave a Review:</h6>
+            <textarea id="reviewText2" class="form-control mb-2" rows="2" placeholder="Write a review..."></textarea>
+            <button class="btn btn-primary btn-sm" onclick="submitReview(2, 'Organic Brown Rice')">Submit</button>
+        
+            <h6 class="mt-3">Customer Reviews:</h6>
+            <div id="reviewsContainer2" class="reviews-container"></div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Product 3 -->
+<div class="modal fade" id="productModal3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Black Rice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img/black rice.jpg" class="img-fluid">
+                <p>High in antioxidants, nutty flavor.</p>
+                <div class="rating-container">
+                    <h6>Rate this product:</h6>
+            <div class="stars" id="ratingStars3" data-product="Black Rice">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+            <span id="ratingValue3">0</span> / 5
+        </div>
+    
+            <div class="review-section">
+            <h6>Leave a Review:</h6>
+            <textarea id="reviewText3" class="form-control mb-2" rows="2" placeholder="Write a review..."></textarea>
+            <button class="btn btn-primary btn-sm" onclick="submitReview(3, 'Black Rice')">Submit</button>
+        
+            <h6 class="mt-3">Customer Reviews:</h6>
+            <div id="reviewsContainer3" class="reviews-container"></div>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Product 4 -->
+<div class="modal fade" id="productModal4">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Red Rice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img/red rice.webp" class="img-fluid">
+                <p>Offers a delightful balance of fiber and digestive support.</p>
+                <div class="rating-container">
+                    <h6>Rate this product:</h6>
+            <div class="stars" id="ratingStars4" data-product="Red Rice">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+            <span id="ratingValue4">0</span> / 5
+        </div>
+        
+    
+            <div class="review-section">
+            <h6>Leave a Review:</h6>
+            <textarea id="reviewText4" class="form-control mb-2" rows="2" placeholder="Write a review..."></textarea>
+            <button class="btn btn-primary btn-sm" onclick="submitReview(4, 'Red Rice')">Submit</button>
+        
+            <h6 class="mt-3">Customer Reviews:</h6>
+            <div id="reviewsContainer4" class="reviews-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Product 5 -->
+<div class="modal fade" id="productModal5">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sona Masoori Rice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img/sona.jpg" class="img-fluid">
+                <p>Lightweight & aromatic, great for daily use.</p>
+                <div class="rating-container">
+                    <h6>Rate this product:</h6>
+            <div class="stars" id="ratingStars5" data-product="Sona Masoori Rice">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+            <span id="ratingValue5">0</span> / 5
+        </div>
+    
+            <div class="review-section">
+            <h6>Leave a Review:</h6>
+            <textarea id="reviewText5" class="form-control mb-2" rows="2" placeholder="Write a review..."></textarea>
+            <button class="btn btn-primary btn-sm" onclick="submitReview(5, 'Sona Masoori Rice')">Submit</button>
+        
+            <h6 class="mt-3">Customer Reviews:</h6>
+            <div id="reviewsContainer5" class="reviews-container"></div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Product 6 -->
+<div class="modal fade" id="productModal6">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ponni Rice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img/ponni.webp" class="img-fluid">
+                <p>Soft, great for idli & dosa batter.</p>
+                <div class="rating-container">
+                    <h6>Rate this product:</h6>
+            <div class="stars" id="ratingStars6" data-product="Ponni Rice">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+            <span id="ratingValue6">0</span> / 5
+        </div>
+    
+            <div class="review-section">
+            <h6>Leave a Review:</h6>
+            <textarea id="reviewText6" class="form-control mb-2" rows="2" placeholder="Write a review..."></textarea>
+            <button class="btn btn-primary btn-sm" onclick="submitReview(6, 'Ponni Rice')">Submit</button>
+        
+            <h6 class="mt-3">Customer Reviews:</h6>
+            <div id="reviewsContainer6" class="reviews-container"></div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addToCartModal" tabindex="-1" aria-labelledby="addToCartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addToCartModalLabel">Item Added to Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Your item has been added to the cart successfully.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="cart.html" class="btn btn-primary">Go to Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br>
+
+<script>
+    function addToCart(productName, price) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || []; 
+        
+        let existingItem = cart.find(item => item.name === productName);
+        if (existingItem) {
+            existingItem.quantity += 1; 
+        } else {
+            cart.push({ name: productName, price: price, quantity: 1 });
+        }
+            localStorage.setItem("cart", JSON.stringify(cart));
+    
+        $('#addToCartModal').modal('show');
+    }
+    function searchProducts() {
+        let input = document.getElementById("searchInput").value.toLowerCase().trim();
+        let products = document.querySelectorAll(".product-card");
+        let productContainer = document.querySelector(".row.g-4");
+
+        let noProductsMessage = document.getElementById("noProductsMessage");
+        if (noProductsMessage) {
+            noProductsMessage.remove();
+        }
+
+        if (input === "") {
+            products.forEach(product => {
+                product.parentElement.style.display = "block"; 
+            });
+            return;
+        }
+
+        let hasResults = false;
+
+        products.forEach(product => {
+            let productName = product.querySelector(".card-title").innerText.toLowerCase();
+            if (productName.includes(input)) {
+                product.parentElement.style.display = "block"; 
+                hasResults = true;
+            } else {
+                product.parentElement.style.display = "none";
+            }
+        });
+
+        if (!hasResults) {
+            let message = document.createElement("div");
+            message.id = "noProductsMessage";
+            message.className = "col-12 text-center text-muted";
+            message.innerText = "No products found";
+            productContainer.appendChild(message);
+        }
+    }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const products = [
+        { id: 1, name: "Premium Basmati Rice" },
+        { id: 2, name: "Organic Brown Rice" },
+        { id: 3, name: "Black Rice" },
+        { id: 4, name: "Red Rice" },
+        { id: 5, name: "Sona Masoori Rice" },
+        { id: 6, name: "Ponni Rice" }
+    ];
+
+    products.forEach(product => {
+        loadRating(product.id, product.name);
+        loadReviews(product.id, product.name);
+    });
+
+    document.querySelectorAll(".stars").forEach(starContainer => {
+        starContainer.addEventListener("click", function (e) {
+            if (e.target.tagName === "SPAN") {
+                let ratingValue = e.target.getAttribute("data-value");
+                let product = this.getAttribute("data-product");
+                let productId = this.id.replace("ratingStars", "");
+
+                localStorage.setItem(`rating-${product}`, ratingValue);
+
+                highlightStars(this, ratingValue);
+                document.getElementById(`ratingValue${productId}`).innerText = ratingValue;
+            }
+        });
+    });
+});
+
+function highlightStars(starContainer, rating) {
+    let stars = starContainer.querySelectorAll("span");
+    stars.forEach(star => {
+        let value = star.getAttribute("data-value");
+        star.classList.toggle("active", value <= rating);
+    });
+}
+
+function loadRating(id, product) {
+    let storedRating = localStorage.getItem(`rating-${product}`);
+    if (storedRating) {
+        highlightStars(document.getElementById(`ratingStars${id}`), storedRating);
+        document.getElementById(`ratingValue${id}`).innerText = storedRating;
+    }
+}
+
+function submitReview(id, product) {
+    let reviewText = document.getElementById(`reviewText${id}`).value.trim();
+    let storedRating = localStorage.getItem(`rating-${product}`) || "0";
+
+    if (reviewText) {
+        let reviews = JSON.parse(localStorage.getItem(`reviews-${product}`)) || [];
+        reviews.push({ text: reviewText, rating: storedRating });
+        localStorage.setItem(`reviews-${product}`, JSON.stringify(reviews));
+
+        loadReviews(id, product);
+        document.getElementById(`reviewText${id}`).value = "";
+    }
+}
+
+function loadReviews(id, product) {
+    let reviews = JSON.parse(localStorage.getItem(`reviews-${product}`)) || [];
+    let container = document.getElementById(`reviewsContainer${id}`);
+    container.innerHTML = reviews.length
+        ? reviews.map(review => `
+            <p>
+                <span class="review-stars">${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}</span>
+                ${review.text}
+            </p>
+        `).join("")
+        : "<p>No reviews yet.</p>";
+}
+</script>
+
+
+    
+<div class="scrolling-offer">
+    🔥Limited Time Offer! Get <span class="highlight">20% Off</span> on Bulk Orders!🎉
+</div>
+
+<br><br>
+
+    <section id="trending">
+        <div class="container mt-5">
+            <h2 class="our-products text-center">Trending Now!!</h2><br><br>
+            <div id="trendCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="2000">
+                        <img src="img/trend3.png" class="d-block w-100" alt="Best Seller">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="img/trend5.png" class="d-block w-100" alt="Organic Rice">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="img/trend4.png" class="d-block w-100" alt="Bulk Orders">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#trendCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#trendCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-light text-center py-4 mt-4">
+        <h4 >Secure Payment & Fast Delivery</h4>
+        <p>✅ Cash on Delivery | ✅ Free Shipping on Orders Over ₹1999</p>
+        <img src="img/gpay.png" alt="Google-pay" width="50" height="50" style="border-radius: 80%;">
+        <img src="img/phpay.png" alt="Phone-pay" width="50" height="50" style="border-radius: 80%;">
+        <img src="img/appay.png" alt="Apple-pay" width="50" height="50" style="border-radius: 80%;">
+    </section>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center align-items-center">
+            <span>ricebasket@gmail.com</span>
+            <span>&copy; All Rights Reserved.</span>
+            <span>+91 98765 43210</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+</body>
+</html>
+
+

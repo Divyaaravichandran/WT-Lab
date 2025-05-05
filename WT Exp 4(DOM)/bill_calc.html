@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Bill Calculator</h2>
+
+        <label>Select Item: <select id="item">
+            <option value="">Select an item</option>
+            <option value="Apple">Apple</option>
+            <option value="Orange">Orange</option>
+            <option value="Mango">Mango</option>
+            <option value="Watermelon">Watermelon</option>
+        </select></label>
+
+        <label>Quantity: <input type="number" id="quantity" placeholder="Enter Quantity"></label>
+        <label>Price: <input type="number" id="price" placeholder="Enter Price"></label>
+
+        <button onclick="addItem()">Add Item</button>
+        <button onclick="resetFields()">Reset</button>
+
+        <h3>Items Added:</h3>
+        <ul id="itemList"></ul>
+
+        <h3 id="totalBill">Total Bill: ₹0.00</h3>
+    </div>
+
+    <script>
+        let items = [];
+
+        function addItem() {
+            let item = document.getElementById("item").value,
+                quantity = +document.getElementById("quantity").value,
+                price = +document.getElementById("price").value;
+
+            if (!item || quantity <= 0 || price <= 0) return alert("Enter valid details!");
+
+            items.push({ item, total: quantity * price });
+            updateList();
+            resetFields();
+        }
+
+        function updateList() {
+            const itemList = document.getElementById("itemList");
+            itemList.innerHTML = ""; 
+
+            for (let i = 0; i < items.length; i++) {
+                const li = document.createElement("li");
+                li.innerHTML = items[i].item + ": ₹" + items[i].total.toFixed(2);
+
+                const button = document.createElement("button");
+                button.textContent = "Remove";
+                button.onclick = () => removeItem(i);
+
+                li.appendChild(button);
+                itemList.appendChild(li);
+            }
+
+            document.getElementById("totalBill").textContent =
+                `Total Bill: ₹${items.reduce((sum, x) => sum + x.total, 0).toFixed(2)}`;
+        }
+
+        function removeItem(index) {
+            items.splice(index, 1);
+            updateList();
+        }
+
+        function resetFields() {
+            document.getElementById("item").value = "";
+            document.getElementById("quantity").value = "";
+            document.getElementById("price").value = "";
+        }
+    </script>
+</body>
+</html>
