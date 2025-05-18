@@ -1,0 +1,129 @@
+/* Container for the About Us Section */
+.about-us-container {
+  background-image: url('/assets/background.jpg'); /* Ensure the path is correct */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  margin-top: 0; /* Remove any unwanted top margin */
+}
+
+/* Overlay for the text section */
+.overlay {
+  background-color: rgba(207, 205, 57, 0.6); /* Slightly darker overlay */
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 800px;
+  z-index: 10;
+  position: relative;
+}
+
+/* Main heading style */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #e25417; /* Bright coral color */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for readability */
+}
+/* Paragraph style */
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #231803; /* Light cream for readability */
+  margin-bottom: 30px;
+}
+
+/* Call-to-action button */
+.cta-button {
+  background-color: #FF6347; /* Bright coral background */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #FF4500; /* Darker coral color on hover */
+}
+
+/* Content below the overlay */
+.about-content {
+  background-color: #FFFAF0; /* Light cream background */
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #FF4500; /* Bright orange for sub-headings */
+}
+
+.about-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-content ul li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333; /* Dark text color for better readability */
+}
+
+.about-content ul li i {
+  color: #FF6347; /* Icon color */
+  margin-right: 10px;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333; /* Dark background for footer */
+  color: white;
+  font-size: 1rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-us-container {
+    height: auto; /* Allow content to expand naturally */
+  }
+
+  .overlay {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    padding: 30px 10px;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+}

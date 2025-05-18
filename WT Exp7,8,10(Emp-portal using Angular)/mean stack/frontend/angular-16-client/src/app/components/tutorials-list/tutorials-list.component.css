@@ -1,0 +1,198 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Custom Container */
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Search Section Styling */
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.list-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-item {
+  width: 100%;
+  max-width: 500px;
+}
+
+.remove-all-button {
+  width: 200px;
+  text-align: center;
+}
+
+.app-tutorial-details {
+  width: 100%;
+  max-width: 700px;
+}
+
+.search-input {
+  width: 80%; /* Adjusted for spacing */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1.1em;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #3498db; /* Blue border on focus */
+  outline: none;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full screen height */
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.search-button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #2980b9;
+}
+
+.search-button:focus {
+  outline: none;
+}
+
+/* Jobs List Section */
+.jobs-list-container {
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 1.8em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.list-group {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.list-item:hover {
+  background-color: #ecf0f1;
+  transform: scale(1.02); /* Small zoom effect on hover */
+}
+
+.list-item.active {
+  background-color: #3498db;
+  color: #fff;
+  transform: scale(1.05); /* Highlight active item with slight zoom */
+}
+
+/* Remove All Button */
+.remove-all-button {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.remove-all-button:hover {
+  background-color: #c0392b;
+}
+
+.remove-all-button:focus {
+  outline: none;
+}
+
+/* Job Details Section */
+.job-details-container {
+  margin-top: 30px;
+}
+
+.app-tutorial-details {
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.app-tutorial-details:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Focus */
+button:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 10px;
+  }
+
+  .search-button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .col-md-8, .col-md-6 {
+    max-width: 100%; /* Full width for smaller screens */
+  }
+
+  .remove-all-button {
+    width: 100%; /* Full width for small screens */
+  }
+}

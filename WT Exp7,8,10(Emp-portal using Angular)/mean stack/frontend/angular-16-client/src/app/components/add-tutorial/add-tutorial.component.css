@@ -1,0 +1,103 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9fafc;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Form Container */
+.submit-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.submit-form:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  color: #333;
+  background-color: #f9fafc;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Submit Button Styling */
+button {
+  width: 100%;  /* Full width for the submit button */
+  padding: 12px 20px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;  /* Center the button horizontally */
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Submitted State */
+h4 {
+  font-size: 1.5em;
+  color: #27ae60;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Add Job Button (after submission) */
+button.add-job {
+  width: 200px;  /* Set width for consistency */
+  margin: 20px auto;  /* Center the button with margin */
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .submit-form {
+    padding: 20px;
+  }
+
+  button {
+    font-size: 1em;
+  }
+}

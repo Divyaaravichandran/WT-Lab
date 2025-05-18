@@ -1,0 +1,66 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentTutorial.id">
+    <h4 class="title">JOBS AVAILABLE:</h4>
+    <div class="details">
+      <label><strong>Job Title:</strong></label> {{ currentTutorial.title }}
+    </div>
+    <div class="details">
+      <label><strong>Job Description:</strong></label>
+      {{ currentTutorial.description }}
+    </div>
+
+
+    <a class="edit-link"
+      routerLink="/tutorials/{{ currentTutorial.id }}">
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentTutorial">
+    <br />
+    <p>Please click on a Tutorial...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentTutorial.id" class="edit-form">
+    <h4 class="title">Jobs</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Job Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentTutorial.title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Job Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentTutorial.description"
+          name="description"
+        />
+      </div>
+    </form>
+
+
+    <button class="btn btn-delete" (click)="deleteTutorial()">
+      Delete
+    </button>
+
+    <button class="btn btn-update" type="submit" (click)="updateTutorial()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentTutorial.id">
+    <br />
+    <p>Cannot access this Job...</p>
+  </div>
+</ng-template>

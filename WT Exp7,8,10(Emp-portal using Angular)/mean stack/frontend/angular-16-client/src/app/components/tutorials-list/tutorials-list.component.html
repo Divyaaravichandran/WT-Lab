@@ -1,0 +1,42 @@
+<body>
+  <div class="page-wrapper">
+<div class="custom-container">
+  <!-- Search Section -->
+  <div class="search-container">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search by title"
+      [(ngModel)]="title"
+    />
+    <button class="search-button" type="button" (click)="searchTitle()">
+      Search
+    </button>
+  </div>
+
+  <!-- Available Jobs Section -->
+  <div class="jobs-list-container">
+    <h4 class="title">Jobs List</h4>
+    <ul class="list-group">
+      <li
+        class="list-item"
+        *ngFor="let tutorial of tutorials; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(tutorial, i)"
+      >
+        {{ tutorial.title }}
+      </li>
+    </ul>
+
+  </div>
+
+  <!-- Job Details Section -->
+  <div class="job-details-container">
+    <app-tutorial-details
+      [viewMode]="true"
+      [currentTutorial]="currentTutorial"
+    ></app-tutorial-details>
+  </div>
+</div>
+</div>
+</body>
